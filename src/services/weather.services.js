@@ -1,6 +1,5 @@
 const API_KEY = process.env.OWM_API_KEY;
 
-
 async function getWeather(lat, lon) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset`;
 
@@ -47,7 +46,8 @@ async function getWeather(lat, lon) {
 
         const todayWeather = {
             weatherCode: code,
-            weatherDescription: code !== null ? weatherDescriptions[code] ?? "Unknown" : null,
+            weatherDescription:
+                code !== null ? (weatherDescriptions[code] ?? "Unknown") : null,
             maxTemperature: data.daily?.temperature_2m_max?.[0] ?? null,
             minTemperature: data.daily?.temperature_2m_min?.[0] ?? null,
             precipitationSum: data.daily?.precipitation_sum?.[0] ?? null,
@@ -56,9 +56,8 @@ async function getWeather(lat, lon) {
         };
 
         return todayWeather;
-
     } catch (error) {
-        console.error('Error fetching daily weather:', error);
+        console.error("Error fetching daily weather:", error);
         return null;
     }
 }
@@ -72,31 +71,4 @@ async function getWeatherAlerts(lat, lon) {
     return res;
 }
 
-async function getDailyWeather(lat, lon) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // take first item from daily arrays as “today”
-        const todayWeather = {
-            maxTemperature: data.daily?.temperature_2m_max?.[0] ?? null,
-            minTemperature: data.daily?.temperature_2m_min?.[0] ?? null,
-            precipitationSum: data.daily?.precipitation_sum?.[0] ?? null,
-            sunrise: data.daily?.sunrise?.[0] ?? null,
-            sunset: data.daily?.sunset?.[0] ?? null
-        };
-
-        return todayWeather;
-
-    } catch (error) {
-        console.error('Error fetching daily weather:', error);
-        return null;
-    }
-}
-console.log(await getWeather(9.9312, 76.2673));
+export { getWeather, getWeatherAlerts };
