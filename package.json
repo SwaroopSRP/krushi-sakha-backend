@@ -1,36 +1,36 @@
 {
-  "name": "krushi-sakha-backend",
-  "version": "1.0.0",
-  "description": "AI-powered personal farming assistant to boost productivity — Backend part",
-  "keywords": [
-    "sih",
-    "ai",
-    "full-stack",
-    "krushi",
-    "sakha",
-    "backend",
-    "node"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SwaroopSRP/krushi-sakha-backend"
-  },
-  "license": "ISC",
-  "author": "Team Future-Farmers",
-  "type": "module",
-  "main": "server.js",
-  "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
-    "express": "^5.1.0"
-  }
+    "name": "krushi-sakha-backend",
+    "version": "1.0.0",
+    "description": "AI-powered personal farming assistant to boost productivity — Backend part",
+    "keywords": [
+        "sih",
+        "ai",
+        "full-stack",
+        "krushi",
+        "sakha",
+        "backend",
+        "node"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SwaroopSRP/krushi-sakha-backend"
+    },
+    "license": "ISC",
+    "author": "Team Future-Farmers",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon src/server.js",
+        "start": "node src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.10",
+        "prettier": "^3.6.2"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0"
+    }
 }
