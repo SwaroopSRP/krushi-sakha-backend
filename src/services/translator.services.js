@@ -22,11 +22,7 @@ async function translateText(text, mode = 0) {
                 from: mode ? "en" : "ml",
                 to: mode ? "ml" : "en"
             },
-            data: [
-                {
-                    text: text
-                }
-            ],
+            data: [{ text: text }],
             responseType: "json"
         });
         const translation = response.data[0].translations[0].text;
