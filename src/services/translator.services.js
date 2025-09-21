@@ -33,3 +33,5 @@ async function translateText(text, mode = 0) {
         throw err;
     }
 }
+
+export default translateText;

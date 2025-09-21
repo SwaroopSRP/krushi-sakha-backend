@@ -1,7 +1,16 @@
 const API_KEY = process.env.OWM_API_KEY;
 
 async function getWeather(lat, lon) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset`;
+    const now = new Date();
+    const archiveYear =
+        now.getMonth() !== 11 || now.getDate() !== 31
+            ? now.getFullYear() - 1
+            : now.getFullYear();
+    const startDate = `${archiveYear}-01-01`;
+    const endDate = `${archiveYear}-12-31`;
+
+    const forecastUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset`;
+    const archiveUrl = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${startDate}&end_date=${endDate}&daily=precipitation_sum&timezone=auto`;
 
     const weatherDescriptions = {
         0: "Clear sky",
@@ -35,29 +44,45 @@ async function getWeather(lat, lon) {
     };
 
     try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const [forecastRes, archiveRes] = await Promise.all([
+            fetch(forecastUrl),
+            fetch(archiveUrl)
+        ]);
 
-        const data = await response.json();
+        if (!forecastRes.ok)
+            throw new Error(
+                `Forecast HTTP error! status: ${forecastRes.status}`
+            );
+        if (!archiveRes.ok)
+            throw new Error(`Archive HTTP error! status: ${archiveRes.status}`);
 
-        const code = data.daily?.weathercode?.[0] ?? null;
+        const forecastData = await forecastRes.json();
+        const archiveData = await archiveRes.json();
 
+        const code = forecastData.daily?.weathercode?.[0] ?? null;
         const todayWeather = {
             weatherCode: code,
             weatherDescription:
                 code !== null ? (weatherDescriptions[code] ?? "Unknown") : null,
-            maxTemperature: data.daily?.temperature_2m_max?.[0] ?? null,
-            minTemperature: data.daily?.temperature_2m_min?.[0] ?? null,
-            precipitationSum: data.daily?.precipitation_sum?.[0] ?? null,
-            sunrise: data.daily?.sunrise?.[0] ?? null,
-            sunset: data.daily?.sunset?.[0] ?? null
+            maxTemperature: forecastData.daily?.temperature_2m_max?.[0] ?? null,
+            minTemperature: forecastData.daily?.temperature_2m_min?.[0] ?? null,
+            precipitationSum:
+                forecastData.daily?.precipitation_sum?.[0] ?? null,
+            sunrise: forecastData.daily?.sunrise?.[0] ?? null,
+            sunset: forecastData.daily?.sunset?.[0] ?? null
         };
 
-        return todayWeather;
+        const dailyRain = archiveData.daily?.precipitation_sum ?? [];
+        const totalAnnualRainfall = Number(
+            dailyRain.reduce((acc, val) => acc + (val ?? 0), 0).toFixed(2)
+        );
+
+        return {
+            ...todayWeather,
+            annualRainfall: totalAnnualRainfall
+        };
     } catch (error) {
-        console.error("Error fetching daily weather:", error);
+        console.error("Error fetching weather:", error);
         return null;
     }
 }
