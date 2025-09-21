@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
 import os from "node:os";
 import app from "./app.js";
+import dotenv from "dotenv";
 
 dotenv.config({
     path: "./.env"

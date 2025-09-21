@@ -1,8 +1,8 @@
 import Groq from "groq-sdk";
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
 async function getLlmOutput(level = 0, systemPrompt = "", userPrompt) {
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
     const res = await groq.chat.completions.create({
         messages: [
             {

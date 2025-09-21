@@ -1,6 +1,6 @@
-const API_KEY = process.env.OWM_API_KEY;
-
 async function getWeather(lat, lon) {
+    const API_KEY = process.env.OWM_API_KEY;
+    
     const now = new Date();
     const archiveYear =
         now.getMonth() !== 11 || now.getDate() !== 31

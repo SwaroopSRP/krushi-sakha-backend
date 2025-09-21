@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import extDataRouter from "./routes/extData.routes.js";
 
 const app = express();
 export default app;
@@ -17,8 +18,11 @@ app.use(
     })
 );
 
+app.use("/api/v1/ext-data", extDataRouter);
+
 app.get("/", (req, res) => {
     res.status(200).send(
         "You are now accessing Krushi Sakha's Backend Server."
     );
 });
+

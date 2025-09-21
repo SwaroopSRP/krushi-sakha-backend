@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const SOIL_URL = "https://rest.isric.org/soilgrids/v2.0/properties/query";
-
 async function getSoilProperties(lat, lon) {
+    const SOIL_URL = "https://rest.isric.org/soilgrids/v2.0/properties/query";
     const props = ["phh2o", "cec", "clay", "ocd", "bdod"];
     const depth = "30-60cm";
 
