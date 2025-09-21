@@ -21,6 +21,7 @@ async function getLatestPrice(district, commodity) {
                 format: "json",
                 limit: 1,
                 offset: 0,
+                "filters[State]": "Kerala",
                 "filters[District]": districtCap,
                 "filters[Commodity]": commodityCap,
                 "sort[Arrival_Date]": "desc"
