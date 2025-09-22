@@ -44,7 +44,7 @@ const fetchWeatherAlerts = asyncHandler(async (req, res, next) => {
 });
 
 const fetchLlmOutput = asyncHandler(async (req, res, next) => {
-    const { level = 0, systemPrompt = "", userPrompt } = req.query;
+    const { level = 0, systemPrompt = "", userPrompt } = req.body;
     if (!userPrompt) {
         throw new ServerError(400, "userPrompt is required.");
     }
@@ -68,7 +68,7 @@ const fetchMarketPrice = asyncHandler(async (req, res, next) => {
 });
 
 const fetchTranslation = asyncHandler(async (req, res, next) => {
-    const { text, mode = 0 } = req.query;
+    const { text, mode = 0 } = req.body;
     if (!text) {
         throw new ServerError(400, "Text is required for translation.");
     }
