@@ -88,10 +88,11 @@ async function getWeather(lat, lon) {
 }
 
 async function getWeatherAlerts(lat, lon) {
+    const API_KEY = process.env.OWM_API_KEY;
     const weatherAlertUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     const resp = await fetch(weatherAlertUrl);
     const data = await resp.json();
-    const res = data.alerts || "No alerts";
+    const res = data.alerts || "No weather alerts";
 
     return res;
 }
