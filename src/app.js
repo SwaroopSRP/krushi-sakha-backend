@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import extDataRouter from "./routes/extData.routes.js";
 import healthCheckerRouter from "./routes/healthcheck.routes.js";
+import insightsRouter from "./routes/insights.routes.js";
 
 const app = express();
 export default app;
@@ -20,6 +21,7 @@ app.use(
 );
 
 app.use("/api/v1/ext-data", extDataRouter);
+app.use("/api/v1/insights", insightsRouter);
 app.use("/api/v1/health", healthCheckerRouter);
 
 app.get("/", (req, res) => {
