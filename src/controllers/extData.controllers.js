@@ -3,6 +3,7 @@ import { getWeather, getWeatherAlerts } from "../services/weather.services.js";
 import getLlmOutput from "../services/llm.services.js";
 import getLatestPrice from "../services/marketPrice.services.js";
 import translateText from "../services/translator.services.js";
+import getDistrict from "../services/district.services.js";
 import asyncHandler from "../utils/asyncHandler.js";
 import ServerResponse from "../utils/apiResponse.js";
 import ServerError from "../utils/apiError.js";
@@ -14,9 +15,14 @@ const fetchSoilData = asyncHandler(async (req, res, next) => {
     }
     const data = await getSoilProperties(lat, lon);
     if (!data) {
-        throw new ServerError(502, "Failed to fetch soil data from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch soil data from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, data, "Soil data fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, data, "Soil data fetched successfully")
+    );
 });
 
 const fetchWeatherData = asyncHandler(async (req, res, next) => {
@@ -26,9 +32,14 @@ const fetchWeatherData = asyncHandler(async (req, res, next) => {
     }
     const data = await getWeather(lat, lon);
     if (!data) {
-        throw new ServerError(502, "Failed to fetch weather data from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch weather data from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, data, "Weather data fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, data, "Weather data fetched successfully")
+    );
 });
 
 const fetchWeatherAlerts = asyncHandler(async (req, res, next) => {
@@ -38,9 +49,14 @@ const fetchWeatherAlerts = asyncHandler(async (req, res, next) => {
     }
     const alerts = await getWeatherAlerts(lat, lon);
     if (!alerts) {
-        throw new ServerError(502, "Failed to fetch weather alerts from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch weather alerts from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, alerts, "Weather alerts fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, alerts, "Weather alerts fetched successfully")
+    );
 });
 
 const fetchLlmOutput = asyncHandler(async (req, res, next) => {
@@ -50,9 +66,14 @@ const fetchLlmOutput = asyncHandler(async (req, res, next) => {
     }
     const output = await getLlmOutput(Number(level), systemPrompt, userPrompt);
     if (!output) {
-        throw new ServerError(502, "Failed to fetch LLM output from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch LLM output from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, output, "LLM output fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, output, "LLM output fetched successfully")
+    );
 });
 
 const fetchMarketPrice = asyncHandler(async (req, res, next) => {
@@ -62,9 +83,14 @@ const fetchMarketPrice = asyncHandler(async (req, res, next) => {
     }
     const price = await getLatestPrice(district, commodity);
     if (!price) {
-        throw new ServerError(502, "Failed to fetch market price from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch market price from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, price, "Market price fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, price, "Market price fetched successfully")
+    );
 });
 
 const fetchTranslation = asyncHandler(async (req, res, next) => {
@@ -74,9 +100,31 @@ const fetchTranslation = asyncHandler(async (req, res, next) => {
     }
     const translation = await translateText(text, Number(mode));
     if (!translation) {
-        throw new ServerError(502, "Failed to fetch translation from external service.");
+        throw new ServerError(
+            502,
+            "Failed to fetch translation from external service."
+        );
     }
-    res.status(200).json(new ServerResponse(200, translation, "Translation fetched successfully"));
+    res.status(200).json(
+        new ServerResponse(200, translation, "Translation fetched successfully")
+    );
+});
+
+const fetchDistrictCoordinates = asyncHandler(async (req, res, next) => {
+    const { district, state = "kerala" } = req.query;
+    if (!district) {
+        throw new ServerError(400, "District is required.");
+    }
+    const coords = await getDistrict(district, state);
+    if (!coords) {
+        throw new ServerError(
+            404,
+            "Coordinates not found for the given district."
+        );
+    }
+    res.status(200).json(
+        new ServerResponse(200, coords, "Coordinates fetched successfully")
+    );
 });
 
 export {
@@ -85,5 +133,6 @@ export {
     fetchWeatherAlerts,
     fetchLlmOutput,
     fetchMarketPrice,
-    fetchTranslation
+    fetchTranslation,
+    fetchDistrictCoordinates
 };

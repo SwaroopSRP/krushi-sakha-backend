@@ -1,5 +1,6 @@
 import os from "node:os";
 import app from "./app.js";
+import dbConnect from "./config/db.js";
 import dotenv from "dotenv";
 
 dotenv.config({
@@ -20,7 +21,13 @@ function getLocalIP() {
     return null;
 }
 
-app.listen(port, "0.0.0.0", () => {
-    console.log(`Server up and running on http://localhost:${port}`);
-    console.log(`Local Address: http://${getLocalIP()}:${port}`);
-});
+dbConnect()
+    .then(() => {
+        app.listen(port, "0.0.0.0", () => {
+            console.log(`Server up and running on http://localhost:${port}`);
+            console.log(`Local Address: http://${getLocalIP()}:${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error("DB connection error: ", err);
+    });

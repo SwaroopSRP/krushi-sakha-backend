@@ -1,44 +1,39 @@
-import axios from "axios";
+import fs from "fs/promises";
+import path from "path";
 
 async function getLatestPrices(district, commodity) {
     try {
-        const apiKey = process.env.DATA_GOV_API_KEY;
-        const url = "https://api.data.gov.in/resource/35985678-0d79-46b4-9ed6-6f13308a1d24";
-
-        const cap = str =>
+        const cap = (str) =>
             str
                 .toLowerCase()
                 .split(" ")
-                .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
                 .join(" ");
 
         const districtCap = cap(district);
         const commodityCap = cap(commodity);
 
-        const resp = await axios.get(url, {
-            params: {
-                "api-key": apiKey,
-                format: "json",
-                limit: 7,
-                offset: 0,
-                "filters[State]": "Kerala",
-                "filters[District]": districtCap,
-                "filters[Commodity]": commodityCap,
-                "sort[Arrival_Date]": "desc"
-            }
-        });
+        // Read the local JSON file
+        const filePath = path.join(process.cwd(), "public", "prices.json"); // adjust path if needed
+        const fileData = await fs.readFile(filePath, "utf-8");
+        const allData = JSON.parse(fileData);
 
-        const records = resp.data.records;
-        if (!records || records.length === 0) return [];
+        const districtData = allData[districtCap];
+        if (!districtData || districtData.length === 0) return [];
 
-        return records.map(record => ({
-            district: record.District,
-            commodity: record.Commodity,
-            arrivalDate: record.Arrival_Date,
-            price: parseInt(record.Modal_Price, 10)
+        // Filter for the given commodity
+        const filtered = districtData
+            .filter((record) => record.commodity === commodityCap)
+            .slice(0, 7); // get last 7 records (assuming already in descending order)
+
+        return filtered.map((record) => ({
+            district: record.district,
+            commodity: record.commodity,
+            arrivalDate: record.arrivalDate,
+            price: parseInt(record.price, 10)
         }));
     } catch (err) {
-        console.error("Error fetching last 7 prices:", err.message);
+        console.error("Error fetching last 7 prices from JSON:", err.message);
         return [];
     }
 }

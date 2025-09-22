@@ -5,7 +5,8 @@ import {
     fetchWeatherAlerts,
     fetchLlmOutput,
     fetchMarketPrice,
-    fetchTranslation
+    fetchTranslation,
+    fetchDistrictCoordinates
 } from "../controllers/extData.controllers.js";
 
 const extDataRouter = Router();
@@ -16,5 +17,6 @@ extDataRouter.get("/weather-alerts", fetchWeatherAlerts);
 extDataRouter.get("/llm-output", fetchLlmOutput);
 extDataRouter.get("/market-price", fetchMarketPrice);
 extDataRouter.get("/translate", fetchTranslation);
+extDataRouter.get("/dist-coords", fetchDistrictCoordinates);
 
 export default extDataRouter;

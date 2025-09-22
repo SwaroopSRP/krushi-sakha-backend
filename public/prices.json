@@ -1,0 +1,642 @@
+{
+    "Thrissur": [
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3200,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3150,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3180,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3220,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3190,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3210,
+            "arrivalDate": "25/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rice",
+            "price": 3175,
+            "arrivalDate": "20/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 165,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 168,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 163,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 167,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 166,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 164,
+            "arrivalDate": "25/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Rubber",
+            "price": 169,
+            "arrivalDate": "20/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4200,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4150,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4180,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4220,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4190,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4210,
+            "arrivalDate": "25/07/2025"
+        },
+        {
+            "district": "Thrissur",
+            "commodity": "Coconut",
+            "price": 4175,
+            "arrivalDate": "20/07/2025"
+        }
+    ],
+    "Palakkad": [
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3100,
+            "arrivalDate": "16/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3120,
+            "arrivalDate": "12/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3080,
+            "arrivalDate": "08/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3110,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3095,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3130,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rice",
+            "price": 3105,
+            "arrivalDate": "25/07/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 162,
+            "arrivalDate": "16/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 160,
+            "arrivalDate": "12/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 164,
+            "arrivalDate": "08/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 161,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 163,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 165,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Rubber",
+            "price": 159,
+            "arrivalDate": "25/07/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4250,
+            "arrivalDate": "16/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4230,
+            "arrivalDate": "12/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4210,
+            "arrivalDate": "08/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4260,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4225,
+            "arrivalDate": "01/08/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4240,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Palakkad",
+            "commodity": "Coconut",
+            "price": 4270,
+            "arrivalDate": "25/07/2025"
+        }
+    ],
+    "Kottayam": [
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3250,
+            "arrivalDate": "17/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3230,
+            "arrivalDate": "13/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3270,
+            "arrivalDate": "09/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3240,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3260,
+            "arrivalDate": "02/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3225,
+            "arrivalDate": "29/07/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rice",
+            "price": 3280,
+            "arrivalDate": "26/07/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 170,
+            "arrivalDate": "17/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 168,
+            "arrivalDate": "13/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 172,
+            "arrivalDate": "09/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 169,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 171,
+            "arrivalDate": "02/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 167,
+            "arrivalDate": "29/07/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Rubber",
+            "price": 173,
+            "arrivalDate": "26/07/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4300,
+            "arrivalDate": "17/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4320,
+            "arrivalDate": "13/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4310,
+            "arrivalDate": "09/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4290,
+            "arrivalDate": "05/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4330,
+            "arrivalDate": "02/08/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4280,
+            "arrivalDate": "29/07/2025"
+        },
+        {
+            "district": "Kottayam",
+            "commodity": "Coconut",
+            "price": 4340,
+            "arrivalDate": "26/07/2025"
+        }
+    ],
+    "Ernakulam": [
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3300,
+            "arrivalDate": "18/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3280,
+            "arrivalDate": "14/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3320,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3290,
+            "arrivalDate": "06/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3310,
+            "arrivalDate": "03/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3275,
+            "arrivalDate": "30/07/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rice",
+            "price": 3330,
+            "arrivalDate": "27/07/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 175,
+            "arrivalDate": "18/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 173,
+            "arrivalDate": "14/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 177,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 174,
+            "arrivalDate": "06/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 176,
+            "arrivalDate": "03/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 172,
+            "arrivalDate": "30/07/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Rubber",
+            "price": 178,
+            "arrivalDate": "27/07/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4350,
+            "arrivalDate": "18/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4370,
+            "arrivalDate": "14/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4340,
+            "arrivalDate": "10/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4360,
+            "arrivalDate": "06/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4380,
+            "arrivalDate": "03/08/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4330,
+            "arrivalDate": "30/07/2025"
+        },
+        {
+            "district": "Ernakulam",
+            "commodity": "Coconut",
+            "price": 4390,
+            "arrivalDate": "27/07/2025"
+        }
+    ],
+    "Kozhikode": [
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3350,
+            "arrivalDate": "19/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3330,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3370,
+            "arrivalDate": "11/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3340,
+            "arrivalDate": "07/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3360,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3325,
+            "arrivalDate": "31/07/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rice",
+            "price": 3380,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 180,
+            "arrivalDate": "19/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 178,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 182,
+            "arrivalDate": "11/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 179,
+            "arrivalDate": "07/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 181,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 177,
+            "arrivalDate": "31/07/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Rubber",
+            "price": 183,
+            "arrivalDate": "28/07/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4400,
+            "arrivalDate": "19/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4420,
+            "arrivalDate": "15/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4410,
+            "arrivalDate": "11/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4390,
+            "arrivalDate": "07/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4430,
+            "arrivalDate": "04/08/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4380,
+            "arrivalDate": "31/07/2025"
+        },
+        {
+            "district": "Kozhikode",
+            "commodity": "Coconut",
+            "price": 4440,
+            "arrivalDate": "28/07/2025"
+        }
+    ]
+}

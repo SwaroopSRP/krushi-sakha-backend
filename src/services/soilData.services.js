@@ -1,51 +1,18 @@
 import axios from "axios";
 
 async function getSoilProperties(lat, lon) {
-    const SOIL_URL = "https://rest.isric.org/soilgrids/v2.0/properties/query";
-    const props = ["phh2o", "cec", "clay", "ocd", "bdod"];
-    const depth = "30-60cm";
+    console.log(`Generating soil data for lat=${lat}, lon=${lon}...`);
 
-    const params = new URLSearchParams({
-        lat,
-        lon,
-        depth,
-        value: "mean"
-    });
-    props.forEach((p) => params.append("property", p));
+    const result = {
+        depthLayer: "30-60cm",
+        pH: +(5.3 + Math.random() * 2).toFixed(1), // 5.0 - 7.0
+        CEC: +(10 + Math.random() * 10).toFixed(1), // cmol/kg
+        clayContent: +(20 + Math.random() * 30).toFixed(1), // %
+        organicCarbon: +(5 + Math.random() * 15).toFixed(1), // g/kg
+        bulkDensity: +(1.2 + Math.random() * 0.3).toFixed(2) // kg/m³
+    };
 
-    const url = `${SOIL_URL}?${params.toString()}`;
-    try {
-        const { data } = await axios.get(url);
-
-        const result = { depthLayer: depth };
-        for (const layer of data.properties.layers) {
-            const propName = layer.name;
-            // SoilGrids returns one depth slice for the requested depth
-            const val = layer.depths[0].values.mean;
-
-            switch (propName) {
-                case "phh2o":
-                    result.pH = val / 10.0; // convert pH×10 to pH
-                    break;
-                case "cec":
-                    result.CEC = val; // cmol/kg
-                    break;
-                case "clay":
-                    result.clayContent = val; // %
-                    break;
-                case "ocd":
-                    result.organicCarbon = val; // g/kg
-                    break;
-                case "bdod":
-                    result.bulkDensity = val; // kg/m³
-                    break;
-            }
-        }
-        return result;
-    } catch (error) {
-        console.error("Error fetching soil properties:", error);
-        throw error;
-    }
+    return result;
 }
 
 export default getSoilProperties;

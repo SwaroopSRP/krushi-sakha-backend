@@ -5,7 +5,7 @@ async function translateText(text, mode = 0) {
     let key = process.env.AZURE_TRANSLATOR_KEY;
     let location = process.env.AZURE_TRANSLATOR_REGION;
     let endpoint = "https://api.cognitive.microsofttranslator.com";
-    
+
     try {
         const response = await axios({
             baseURL: endpoint,
